@@ -1,0 +1,149 @@
+// Add to Cart (If product exists, update the quantity)
+app.post('/add-to-cart', (req, res) => {
+    const { user_id, product_id, product_name, quantity, price } = req.body;
+
+    // Check if the product already exists in the user's cart
+    const checkSql = 'SELECT * FROM orders_summary WHERE user_id = ? AND product_id = ?';
+    db.query(checkSql, [user_id, product_id], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Error checking product in cart' });
+        }
+
+        if (results.length > 0) {
+            // If product exists, update the quantity
+            const updateSql = 'UPDATE orders_summary SET quantity = quantity + ? WHERE user_id = ? AND product_id = ?';
+            db.query(updateSql, [quantity, user_id, product_id], (err, updateResults) => {
+                if (err) {
+                    return res.status(500).json({ error: 'Error updating quantity' });
+                }
+                res.status(200).json({ message: 'Product quantity updated in cart' });
+            });
+        } else {
+            // If product doesn't exist, insert a new row
+            const insertSql = 'INSERT INTO orders_summary (user_id, product_id, product_name, quantity, price) VALUES (?, ?, ?, ?, ?)';
+            db.query(insertSql, [user_id, product_id, product_name, quantity, price], (err, insertResults) => {
+                if (err) {
+                    return res.status(500).json({ error: 'Error adding to cart' });
+                }
+                res.status(200).json({ message: 'Product added to cart' });
+            });
+        }
+    });
+});
+// Remove from Cart
+app.delete('/remove-from-cart', (req, res) => {
+    const { user_id, product_id } = req.body;
+
+    const deleteSql = 'DELETE FROM orders_summary WHERE user_id = ? AND product_id = ?';
+    db.query(deleteSql, [user_id, product_id], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Error removing from cart' });
+        }
+        res.status(200).json({ message: 'Product removed from cart' });
+    });
+});
+
+// Checkout Route (Empties cart after successful checkout)
+app.post('/checkout', (req, res) => {
+    const user_id = req.body.user_id;
+
+    const sql = 'DELETE FROM orders_summary WHERE user_id = ?';
+    db.query(sql, [user_id], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Error during checkout' });
+        }
+        res.status(200).json({ message: 'Checkout successful! Cart is now empty', success: true });
+    });
+});
+
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(Server running on http://localhost:${PORT});
+});
+
+
+
+
+
+
+// fetch('cart/add_to_cart', {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(data)
+// }).then(r => r.json()).then(data => {
+//     console.log(data)
+//     calculate(data.cartItemsCount)
+// })
+
+
+cart.js code
+
+//hite 2 example hai code che 
+//1 vaishnavi cha cartsample1.txt madhe hai ty ani 
+// 2nd rutu cha hai tyat mi aplya database madhe cart_table banvle hote tyche 
+// attributes haite
+
+
+
+
+app.post('/addToCart', (req, res) => {
+    const { userid ,productid, productname, productquantity, productprice } = req.body;
+
+    // Check if the product already exists in the user's cart
+    const checkSql = 'SELECT * FROM cart_table WHERE userid = ? AND productid = ?';
+    connection.query(checkSql, [userid, productid], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Error checking product in cart' });
+        }
+
+        if (results.length > 0) {
+            // If product exists, update the quantity
+            const updateSql = 'UPDATE cart_table SET productquantity = productquantity + ? WHERE userid = ? AND productid = ?';
+            db.query(updateSql, [productquantity, userid, productid], (err, updateResults) => {
+                if (err) {
+                    return res.status(500).json({ error: 'Error updating quantity' });
+                }
+                res.status(200).json({ message: 'Product quantity updated in cart' });
+            });
+        } else {
+            // If product doesn't exist, insert a new row
+            const insertSql = 'INSERT INTO cart_table (userid, productid, productname, productquantity, productprice) VALUES (?, ?, ?, ?, ?)';
+            db.query(insertSql, [userid, productid, productname, productquantity, productprice], (err, insertResults) => {
+                if (err) {
+                    return res.status(500).json({ error: 'Error adding to cart' });
+                }
+                res.status(200).json({ message: 'Product added to cart' });
+            });
+        }
+    });
+});
+// Remove from Cart
+app.delete('/remove-from-cart', (req, res) => {
+    const { userid, productid } = req.body;
+
+    const deleteSql = 'DELETE FROM cart_table WHERE userid = ? AND productid = ?';
+    connection.query(deleteSql, [userid, productid], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Error removing from cart' });
+        }
+        res.status(200).json({ message: 'Product removed from cart' });
+    });
+});
+
+// Checkout Route (Empties cart after successful checkout)
+app.post('/checkout', (req, res) => {
+    const userid = req.body.userid;
+
+    const sql = 'DELETE FROM cart_table WHERE userid = ?';
+    connection.query(sql, [userid], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Error during checkout' });
+        }
+        res.status(200).json({ message: 'Checkout successful! Cart is now empty', success: true });
+    });
+});
+
+

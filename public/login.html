@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="lgs (1).css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="shop.html"> -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+</head>
+<body>
+    
+    <section id="header">
+        <a href="#">
+        <img src="images/logo.png" alt="" class="logo">
+        </a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a class="active" href="login.html">LOGIN</a></li>
+                <!-- <li><a href="signup.html">SIGNUP</a></li> -->
+                <li><a href="cart.html">
+                    <ion-icon name="cart"></ion-icon>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+
+  <div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Sign UP</h1>
+			<div class="social-container">
+                <a href="https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&hl=en_GB&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S-1526589560%3A1729011644229681&ddm=0" 
+				class="icons"><i class='bx bxl-google'></i></a>
+                <a href="https://en-gb.facebook.com/login.php/" class="icons"><i class='bx bxl-facebook'></i></a>
+                <a href="https://github.com" class="icons"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/login" class="icons"><i class='bx bxl-linkedin'></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name" id="signUPname"  />
+			<input type="email" placeholder="Email" id="signUPemail"/>
+			<input type="password" placeholder="Password" id="signUPpassword" />
+			<button id="userSignUp">Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+			<div class="social-container">
+                <a href="https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&hl=en_GB&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S-1526589560%3A1729011644229681&ddm=0" 
+				class="icons"><i class='bx bxl-google'></i></a>
+                <a href="https://en-gb.facebook.com/login.php/" class="icons"><i class='bx bxl-facebook'></i></a>
+                <a href="https://github.com" class="icons"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/login" class="icons"><i class='bx bxl-linkedin'></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" id="signInemail" />
+			<input type="password" placeholder="Password" id="signInpassword"/>
+			<a href="#">Forgot your password?</a>
+			<button id="userSignIn">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+    <script src="lgs(1).js"></script>
+</body>
+</html> 

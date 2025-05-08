@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShopX</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <section id="header">
+        <a href="#">
+        <img src="images/logo.png" alt="" class="logo">
+        </a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="login.html">LOGIN</a></li> 
+                <li><a class="active" href="cart.html">
+                    <ion-icon name="cart"></ion-icon>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="about">
+        <img src="images/about1.png" alt="About Us Image">      
+    </div>
+    <div class="abbutton">
+        <button class="cta">
+            <a href="shop.html">
+            <span class="hover-underline-animation"> Shop now </span>
+            </a>
+            <svg
+              id="arrow-horizontal"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="10"
+              viewBox="0 0 46 16"
+            >
+              <path
+                id="Path_10"
+                data-name="Path 10"
+                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                transform="translate(30)"
+              ></path>
+            </svg>
+          </button>
+    </div>
+
+    <br>
+
+
+    <div class="diffSection" id="contactus_section">
+        <center><p style="font-size: 50px; padding: 100px">Contact Us</p></center>
+        <div class="csec"></div>
+        <div class="back-contact">
+            <div class="cc">
+            <form action="https://api.web3forms.com/submit" method="POST" >
+                <input type="hidden" name="access_key" value="6aea3259-4922-484d-99f9-5c147036865a">
+                <label>First Name</label><br>
+                <input class="input" type="text" name=""required="required"><br>
+                <label>Last Name</label><br>
+                <input class="input" type="text" name="lname" required="required"><br>
+                <label>Email <label><br>
+                <input class="input" type="email" name="mail" required="required"><br>
+                <label>Message</label><br>
+                <input class="input" type="text" name="message"  required="required"><br>
+                <label>Additional Details</label><br>
+                <textarea class="input" name="addtional"></textarea><br>
+                <button type="submit" id="csubmit">Send Message</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="contact_container">
+        <div class="contact-box">
+            <span>name</span>
+            <input type="text" name="name" id="name">
+            <span>email</span> 
+            <input type="text" name="email" id="email">
+            <span>message</span>
+            <input type="text" name="message" id="msg">
+            <input type="button" value="submit" id="btn">
+        </div>
+    </div> -->
+
+    <footer class="section-p1">
+        <div class="col">
+            <h4>Contact</h4>
+            <p><img src="images/location.png" alt=""><strong>Address: </strong> 411040 Koregoan Park,Pune, MAHARASHTRA, India.</p>
+            <p><img src="images/phone.png" alt=""><strong>Phone: </strong> +91 9568741230</p>
+            <p><strong>Hours: </strong> 10:00 - 22:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icons">
+                    <a href="https://www.facebook.com/profile.php?id=100011760596080&mibextid=ZbWKwL">
+                        <img src="images/facebook.svg" width="25px" alt="">
+                    </a>
+                    <a href="shopx6996@gmail.com">
+                        <img src="images/email.png" width="25px" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/shopx99?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                        <img src="images/instagram.svg"
+                            width="25px" alt="">
+                        </a>
+                    <a href="https://x.com/Tejaskadam0425?t=0Toy2UkJg1mtaSDMWlljvQ&s=09">
+                        <img src="images/twitter.svg" width="25px" alt="">
+                    </a>
+                    <a href="https://youtube.com/@tejask1498?si=kCzEUvF6RUOHiRl-">
+                        <img src="images/youtube.svg" width="25px" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

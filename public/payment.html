@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="container">
+        <form action="" method="post" >
+            <!-- <input type="hidden" name="access_key" value="6aea3259-4922-484d-99f9-5c147036865a"> -->
+            <h1 class="mainheading"> PAYMENT FORM</h1>
+            <br>
+            <h2> User Information</h2>
+            <p>Name: 
+                <input type="text" required name="name" placeholder="Name">
+            </p>
+            <p>
+                <fieldset>
+                    <legend>Gender</legend>
+                    Male <input type="radio" name="gender" id = "male" value="M" required> Female <input type="radio" name="gender" id = "Female" value="F" required>
+                </fieldset>
+            </p>
+            <p>
+                Address
+                <textarea placeholder="Enter your Address" name="address" id="address" cols="100" rows="10"></textarea>
+            </p>
+            <p>
+                Email:
+                <input type="email" name="email" required placeholder="abc@gmail.com" >
+            </p>
+            <p>
+                PinCode:
+                <input type="number" name="pincode" id="pincode" placeholder="123456">
+            </p>
+            <h2> Payment Information</h2>
+            <p>
+                Card Type: 
+                <select name="card_type" id="card_type" required>
+                    <option value="">---------Select Payment Type---------</option>
+                    <option value="Visa">Visa</option>
+                    <option value="mastercard">MasterCard</option>
+                    <option value="RuPay">RuPay</option>
+                    <!-- <option value="Upi">UPI</option> -->
+                    <option value="Creditcard">Credit card</option>
+                </select>
+            </p>
+            <p>
+                Card Number:
+                <input type="number" name="card_number" id="card_number" required placeholder="1111-2222-3333-4444">
+            </p>
+            <p>
+                Expiration Date:
+                <input type="date" name="exp_date" id="exp_date" required>
+            </p>
+            <p>
+                CVV:
+                <input type="number" name="cvv" id="cvv" required placeholder="123">
+            </p>
+            <!-- <input type="Submit" value="Paynow"> -->
+            <button onclick="alert('order placed')" class="Btn" id="Btn">
+                Pay
+                <svg viewBox="0 0 576 512" class="svgIcon"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
+              </button>
+        </form>
+    </div>
+</body>
+</html>

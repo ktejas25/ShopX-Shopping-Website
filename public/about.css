@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family:'Poppins', italic;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 15px rgba(0 , 0, 0, 0.30);
+    height: 55px;
+    width: 100%;
+    background-color:peachpuff;
+    top: 10px;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0 25px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 555;
+    color: black;
+}
+
+#navbar li a:hover{
+    color: orangered;
+    transition: 0.05s ease;
+}
+
+#navbar li a::after{
+    content: '';
+    position: absolute;
+    right: 10px;
+    bottom: -6px;
+    width: 80%;
+    height: 3px;
+    background: ghostwhite;
+    border-radius: 5px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+#navbar li a:hover::after{
+    transform: scaleX(1);
+}
+
+
+.logo{
+    height: 275px;
+    width: 275px;
+    right: 30px;
+    object-fit: contain;
+    position: relative;
+}
+
+.logo:hover{
+    margin: auto;
+    display: block;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    position: relative;
+    transition: ease .3s;
+    background: transparent;
+}
+.logo:hover::after{
+    position:absolute;
+    background-position: none;
+}
+
+
+
+
+body,
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+
+
+#mobile{
+    display: flex;
+    align-items: center;
+}
+#mobile i{
+    color: #1a1a1a;
+    font-size: 24px;
+    padding-right: 20px;
+}
+
+#page-header.about-header{
+    background-image: url(images/banner.png);
+}
+#about-head{
+    display: flex;
+    align-items: center;
+}
+
+#about-head img{
+    width: 50%;
+    height: auto;
+}
+#about-head div{
+    padding-left: 40px;
+}
+#about-app{
+    text-align: center;
+}
+#about-app .video{
+    width: 70%;
+    height: 100%;
+    margin: 30px auto 0 auto;
+}
+#about-app .video video{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    padding: 57px 0px 23px 0px; 
+}
+
+.about img{
+    width: 100%;
+    margin: 0px;
+}
+
+
+.abbutton{
+    /* padding-left:80%; */
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+    margin-top: -215px;
+    margin-bottom: 135px; 
+}
+
+
+
+
+.cta {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+  }
+  
+  .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+  }
+  
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+  
+  .cta:active svg {
+    transform: scale(0.9);
+  }
+  
+  .hover-underline-animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+  }
+  
+  .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  
+
+
+
+  button {
+    font-size: 17px;
+    padding: 0.5em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    background: dodgerblue;
+    color: white;
+    border-radius: 4px;
+   }
+   
+   button:hover {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgba(0,212,255,1) 100%);
+   }
+   
+   button:active {
+    transform: translate(0em, 0.2em);
+   }
+
+
+
+
+   /* .contact_container{
+    background-image: url(images/banner.png);
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+   }
+
+   .conatct-box{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    height: 400px;
+    width: 300px; 
+    line-height: 100px;
+   }
+
+   #btn{
+    margin-top: 20px;
+    padding: 10px 30px;
+    background: black;
+    border: none;
+    color: white;
+    cursor: pointer;
+   } */

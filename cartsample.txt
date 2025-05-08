@@ -1,0 +1,30 @@
+app.use(express.static('public'));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
+
+app.post('/insert', (req, res) => {
+    let id=req.body.prodtid
+    let name=req.body.prodname
+    let price=req.body.prodprice
+    let quantity=req.body.prodquantity
+
+
+    // SQL query to insert data into the 'cart' table
+    const sql = `INSERT INTO cart_table (productid, productname, productquantity, productprice) VALUES (prodid, prodnam, prodprice,prodquantity)`;
+    db.query(sql, [prodid, prodname, produquantity, prodprice], (err, result) => {
+        if (err) {
+            console.error('Error inserting data:', err);
+            return res.status(500).send('Database Error');
+        }
+
+        console.log('Data inserted:', result);
+        res.send('Product added to cart successfully');
+    });
+});
+
+
+user code
+
+const bodyParser = require('body-parser');
