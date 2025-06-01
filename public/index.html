@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShopX - Your Ultimate Fashion Destination</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="home.css">
+
+  <!-- Ionicons for icons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- jQuery CDN for scroll script -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+
+  
+</head>
+
+<body>
+  <header id="header" role="banner">
+    <a href="index.html" aria-label="ShopX Home">
+      <img src="images/logowhite.png" alt="ShopX Logo" class="logo" />
+    </a>
+    <nav role="navigation" aria-label="Primary navigation">
+      <ul id="navbar">
+        <li><a class="active" href="index.html" aria-current="page">HOME</a></li>
+        <li><a href="shop.html">SHOP</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+        <li><a href="login.html">SIGNUP</a></li>
+        <li>
+          <a href="cart.html" aria-label="View Cart">
+            <ion-icon name="cart"></ion-icon>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" aria-label="Promotional hero section">
+      <video autoplay loop muted playsinline>
+        <source src="images/backgroundvideo.mp4" type="video/mp4" />
+        Sorry, your browser does not support the video tag.
+      </video>
+
+      <div class="content">
+        <h2>50% OFF</h2>
+        <h1>ON Every Product</h1>
+        <p>STYLE THAT RESONATES, FASHION THAT ENDURES.</p>
+        <button type="button" aria-label="Shop Now">
+          <a href="shop.html">Shop Now</a>
+        </button>
+      </div>
+    </section>
+
+    <section id="featured-products" aria-label="Featured Products">
+      <h2>Featured Products</h2>
+      <div class="products-grid">
+        <article class="product-card" aria-labelledby="product1-title">
+          <img src="images/104.jpg" alt="Air Jordan 1 OG Chicago" />
+          <div class="product-info">
+            <h4 id="product1-title"> Air Jordan 1 OG Chicago </h3>
+            <div class="stars" aria-label="4 out of 5 stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-outline"></ion-icon>
+            </div>
+            <p>Soft cotton, perfect fit, and a timeless style for every occasion.</p>
+            <div class="price">₹25,999</div>
+            <div id="shopnow">
+                <button type="button" aria-label="Shop Now">
+                    <a href="shop.html" class="shop-btn" aria-label="Buy Now">Buy Now</a>
+                </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" aria-labelledby="product2-title">
+          <img src="images/f5.jpg" alt="Animated T-shirt" />
+          <div class="product-info">
+            <h4 id="product2-title">Animated T-shirt</h3>
+            <div class="stars" aria-label="5 out of 5 stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+            <p>Lightweight, durable, and designed for comfort and performance.</p>
+            <div class="price">₹199</div>
+            <div id="shopnow">
+                <button type="button" aria-label="Shop Now">
+                    <a href="shop.html" class="shop-btn" aria-label="Buy Now">Buy Now</a>
+                </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" aria-labelledby="product3-title">
+          <img src="images/rolex.jpg" alt="Elegant Wrist Watch" />
+          <div class="product-info">
+            <h4 id="product3-title"> Rolex Sky-Dweller Premium Oyster Perpetual </h3>
+            <div class="stars" aria-label="4.5 out of 5 stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+            <p>Classic design with modern technology for your everyday elegance.</p>
+            <div class="price">₹9,999</div>
+            <div id="shopnow">
+                <button type="button" aria-label="Shop Now">
+                    <a href="shop.html" class="shop-btn" aria-label="Buy Now">Buy Now</a>
+                </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-left">
+        <h4>Follow Us On:</h4>
+        <div class="social-media">
+          <a href="mailto:shoppingwithshopx@gmail.com" aria-label="Send Email to ShopX">
+            <img src="images/email.png" alt="Email Icon" />
+          </a>
+          <a href="https://x.com/Tejaskadam0425?t=0Toy2UkJg1mtaSDMWlljvQ&s=09" aria-label="Visit our Twitter profile" target="_blank" rel="noopener noreferrer">
+            <img src="images/twitter.svg" alt="Twitter Icon" />
+          </a>
+          <a href="#" aria-label="Visit our Facebook profile" target="_blank" rel="noopener noreferrer">
+            <img src="images/facebook.svg" alt="Facebook Icon" />
+          </a>
+          <a href="https://www.instagram.com/shopx99" aria-label="Visit our Instagram profile" target="_blank" rel="noopener noreferrer">
+            <img src="images/instagram.svg" alt="Instagram Icon" />
+          </a>
+        </div>
+        <address>
+          <p><img src="images/location.png" alt="Location Icon" /> Pune Maharashtra - 411037</p>
+          <p>
+            <img src="images/phone.png" alt="Phone Icon" /> +91 9172653374
+          </p>
+          <p>
+            <img src="images/email.png" alt="Email Icon" /> shoppingwithshopx@gmail.com
+          </p>
+        </address>
+      </div>
+      <div class="footer-right">
+        <h2>Our Newsletter</h2>
+        <hr />
+        <p>Enter your email to receive news and updates.</p>
+        <form class="newsletter-form" action="#" method="post" aria-label="Newsletter subscription form">
+          <input class="txtb" type="email" name="email" placeholder="Enter Your Email" required aria-required="true" />
+          <input class="btn" type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // jQuery scroll effect for header background
+    $(window).on('scroll', function () {
+      if ($(window).scrollTop()) {
+        $('#header').addClass('black');
+      } else {
+        $('#header').removeClass('black');
+      }
+    });
+  </script>
+</body>
+
+</html>

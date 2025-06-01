@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.listProduct {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.listProduct .item {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.listProduct .item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+}
+
+.listProduct .item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.listProduct .item h2 {
+  font-size: 1.1rem;
+  margin: 0 0 10px;
+  font-weight: 600;
+  color: #222;
+}
+
+.listProduct .price {
+  font-size: 1rem;
+  color: #e8bc0e;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 1.5px;
+}
+
+.listProduct .item button {
+  background-color: #353432;
+  color: #eee;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.listProduct .item button:hover {
+  background-color: #e8bc0e;
+  color: #353432;
+}

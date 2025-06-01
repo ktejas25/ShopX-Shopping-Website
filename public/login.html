@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="lgs (1).css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <style>
+    /* Add logout button styles here */
+    #logoutBtn {
+      background: none;
+      border: none;
+      color: #333;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 5px 10px;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    #logoutBtn:hover {
+      color: #FF4B2B;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="header">
+    <a href="#"><img src="images/logowhite.png" alt="Logo" class="logo"></a>
+    <nav>
+      <ul id="navbar">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="shop.html">SHOP</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a class="active" href="login.html" id="loginLink">LOGIN</a></li>
+        <li><a href="cart.html"><ion-icon name="cart-outline"></ion-icon></a></li>
+        <li><button id="logoutBtn" style="display:none;">LOGOUT</button></li>
+      </ul>
+    </nav>
+  </section>
+
+  <div class="container" id="container">
+    <!-- Sign Up -->
+    <div class="form-container sign-up-container">
+      <form id="signUpForm">
+        <h1>Create Account</h1>
+        <div class="social-container">
+          <a href="#" class="icons"><i class='bx bxl-google'></i></a>
+          <a href="#" class="icons"><i class='bx bxl-facebook'></i></a>
+          <a href="#" class="icons"><i class='bx bxl-github'></i></a>
+          <a href="#" class="icons"><i class='bx bxl-linkedin'></i></a>
+        </div>
+        <span>or use your email for registration</span>
+        <input type="text" placeholder="Name" id="signUPname" required />
+        <input type="email" placeholder="Email" id="signUPemail" required />
+        <input type="password" placeholder="Password" id="signUPpassword" required minlength="6" />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    <!-- Sign In -->
+    <div class="form-container sign-in-container">
+      <form id="signInForm">
+        <h1>Sign in</h1>
+        <div class="social-container">
+          <a href="#" class="icons"><i class='bx bxl-google'></i></a>
+          <a href="#" class="icons"><i class='bx bxl-facebook'></i></a>
+          <a href="#" class="icons"><i class='bx bxl-github'></i></a>
+          <a href="#" class="icons"><i class='bx bxl-linkedin'></i></a>
+        </div>
+        <span>or use your account</span>
+        <input type="email" placeholder="Email" id="signInemail" required />
+        <input type="password" placeholder="Password" id="signInpassword" required />
+        <a href="#">Forgot your password?</a>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+
+    <!-- Overlay Panels -->
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To stay connected with us, please log in with your personal info</p>
+          <button class="ghost" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Enter your personal details and start your journey with us</p>
+          <button class="ghost" id="signUp">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="lgs(1).js"></script>
+  <script>
+    // Handle showing/hiding logout button
+    document.addEventListener("DOMContentLoaded", () => {
+      const logoutBtn = document.getElementById("logoutBtn");
+      const loginLink = document.getElementById("loginLink");
+
+      function updateNav() {
+        if (localStorage.getItem("isLoggedIn") === "true") {
+          logoutBtn.style.display = "inline-block";
+          loginLink.style.display = "none";
+        } else {
+          logoutBtn.style.display = "none";
+          loginLink.style.display = "inline-block";
+        }
+      }
+
+      logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("isLoggedIn");
+        updateNav();
+        // Redirect to home or login page after logout
+        window.location.href = "index.html";
+      });
+
+      updateNav();
+
+      // Example login logic - replace with your actual login logic!
+      document.getElementById("signInForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        // Here you would verify user credentials with backend
+        // For demo, just set login true:
+        localStorage.setItem("isLoggedIn", "true");
+        updateNav();
+        alert("Logged in successfully!");
+        window.location.href = "index.html";
+      });
+
+      document.getElementById("signUpForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        // Handle sign up logic here
+        alert("Sign Up functionality not implemented in this demo.");
+      });
+    });
+  </script>
+</body>
+</html>

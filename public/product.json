@@ -1,0 +1,52 @@
+
+[
+    {
+        "id": 1,
+        "name":" T-Shirt",
+        "price": 200,
+        "image": "images/f1.png"
+    },
+    {
+        "id": 2,
+        "name":" T-Shirt",
+        "price": 250,
+        "image": "images/f2.png"
+    },
+    {
+        "id": 3,
+        "name":" LD03 LOUNGE CHAIR",
+        "price": 290,
+        "image": "images/f3.png"
+    },
+    {
+        "id": 4,
+        "name":" LD04 LOUNGE CHAIR",
+        "price": 200,
+        "image": "images/f4.png"
+    },
+    {
+        "id": 5,
+        "name":" LD05 LOUNGE CHAIR",
+        "price": 300,
+        "image": "image/5.png"
+    },
+    {
+        "id": 6,
+        "name":" LD06 LOUNGE CHAIR",
+        "price": 200,
+        "image": "images/f6.png"
+    },
+    {
+        "id": 7,
+        "name":" LD07 LOUNGE CHAIR",
+        "price": 200,
+        "image": "images/tshirt1.jpg"
+    },
+    {
+        "id": 8,
+        "name":" LD08 LOUNGE CHAIR",
+        "price": 200,
+        "image": "images/tshirt4.ipg"
+    }
+
+]

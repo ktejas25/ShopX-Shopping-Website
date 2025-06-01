@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Shipping Status</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="shippingstatus.css">
+  <link rel="stylesheet" href="orderconfirmation.css" />
+</head>
+<body>
+
+<section id="header">
+  <a href="index.html"><img src="images/logowhite.png" class="logo" alt="Logo" /></a>
+  <div>
+    <ul id="navbar">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="shop.html">SHOP</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="login.html">LOGIN</a></li>
+      <li><a href="login.html">SIGNUP</a></li>
+    </ul>
+  </div>
+</section>
+
+<div class="container">
+  <!-- Content dynamically inserted by JS -->
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const orderData = JSON.parse(localStorage.getItem('orderData'));
+    const container = document.querySelector('.container');
+
+    if (!orderData) {
+      container.innerHTML = `<p>No order data found. Please place an order first.</p>`;
+      return;
+    }
+
+    const { orderNumber, orderDate, deliveryDate, status, customer, paymentMethod, items, total } = orderData;
+
+    // Compose order metadata
+    const orderMetaHTML = `
+      <strong>Order No:</strong> ${orderNumber}<br>
+      <strong>Order Date:</strong> ${orderDate}<br>
+      <strong>Estimated Delivery:</strong> ${deliveryDate}<br>
+      <strong>Status:</strong> <span id="orderStatus">${status}</span>
+    `;
+
+    // Customer information HTML
+    const customerHTML = `
+      <p><strong>Name:</strong> ${customer.fullname}</p>
+      <p><strong>Email:</strong> ${customer.email}</p>
+      <p><strong>Shipping Address:</strong> ${customer.address}, ${customer.city}, ${customer.state} - ${customer.zip}</p>
+      <p><strong>Payment Method:</strong> ${paymentMethod}</p>
+    `;
+
+    // Order items list
+    let itemsHTML = '';
+    items.forEach(item => {
+      const subtotal = item.price * item.quantity;
+      itemsHTML += `
+        <div class="order-item">
+          <div class="order-item-name">${item.name} (x${item.quantity})</div>
+          <div>Rs ${subtotal.toFixed(2)}</div>
+        </div>
+      `;
+    });
+
+    itemsHTML += `<div class="order-total">Total: Rs ${total.toFixed(2)}</div>`;
+
+    // Status-specific messages
+    let statusMessage = '';
+    if (status === 'Delivered') {
+      statusMessage = `<p>Thank you for shopping with us! Your order has been delivered.</p>`;
+    } else if (status === 'Shipped') {
+      statusMessage = `<p>Your order is on the way. Estimated delivery by ${deliveryDate}.</p>`;
+    } else if (status === 'Processing') {
+      statusMessage = `<p>Your order is being processed. We will notify you once it ships.</p>`;
+    } else {
+      statusMessage = `<p>Current status: ${status}</p>`;
+    }
+
+    // Final HTML injection
+    container.innerHTML = `
+      <h1 class="mainheading">Your Order Status</h1>
+      <div id="orderMeta">${orderMetaHTML}</div>
+      <h2>Customer Information</h2>
+      <div id="customerInfo">${customerHTML}</div>
+      <h2>Order Details</h2>
+      <div id="orderedItems">${itemsHTML}</div>
+      <div id="statusContainer">
+        <p><strong>Current Status:</strong> <span id="orderStatus">${status}</span></p>
+        ${statusMessage}
+      </div>
+
+      <div style="margin-top: 20px;">
+        <button onclick="window.print()" class="Btn">🖨️ Print Invoice</button>
+        <a href="shop.html" class="Btn">🛍️ Continue Shopping</a>
+        <a href="orderhistory.html" class="Btn">📜 View Order History</a>
+      </div>
+    `;
+  });
+</script>
+
+</body>
+</html>

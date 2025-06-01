@@ -1,0 +1,200 @@
+[
+    {
+        "id": 1,
+        "name":"Animated T-Shirt",
+        "price": 299,
+        "image": "images/f1.jpg"
+    },
+    {
+        "id": 2,
+        "name":" Animated T-Shirt",
+        "price": 249,
+        "image": "images/f2.jpg"
+    },
+    {
+        "id": 3,
+        "name":" Animated T-Shirt",
+        "price": 399,
+        "image": "images/f3.jpg"
+    },
+    {
+        "id": 4,
+        "name":" Animated T-Shirt",
+        "price": 159,
+        "image": "images/f4.jpg"
+    },
+    {
+        "id": 5,
+        "name":" Animated T-Shirt",
+        "price": 199,
+        "image": "images/f5.jpg"
+    },
+    {
+        "id": 6,
+        "name":" Animated T-Shirt",
+        "price": 599,
+        "image": "images/f6.jpg"
+    },
+    {
+        "id": 7,
+        "name":" Air Jordan 1 OG Chicago ",
+        "price": 25999,
+        "image": "images/104.jpg"
+    },
+    {
+        "id": 8,
+        "name":" Skyblue and Green Colour",
+        "price": 3999,
+        "image": "images/sneaker1.jpg"
+    },
+    {
+        "id": 9,
+        "name":" Puma Black and White Colour",
+        "price": 9999,
+        "image": "images/puma1.jpg"
+    },
+    {
+        "id": 10,
+        "name":" Blue Coloured Adidas Shoes",
+        "price": 7499,
+        "image": "images/add"
+    },
+    {
+        "id": 11,
+        "name":" Canvas ",
+        "price": 499,
+        "image": "images/shoecanva.jpg"
+    },
+    {
+        "id": 12,
+        "name":" Orange and Gray Colour Sneaker",
+        "price": 299,
+        "image": "images/sneaker2.jpg"
+    },
+    {
+        "id": 13,
+        "name":" Simple Brown Colour Watch ",   
+        "price": 259,
+        "image": "images/watch.jpg"
+    },
+    {
+        "id": 14,
+        "name":" Titan Blue Dial and Band Analog Stainless Steel Watch ",
+        "price": 6499,
+        "image": "images/titan.jpg"
+    },
+    {
+        "id":15,
+        "name":" Rolex Sky-Dweller Premium Oyster Perpetual Men's Automatic Watch with Sapphire Glass, Dial Size - 38mm (Original Size) ",
+        "price": 9999,
+        "image": "images/rolex.jpg"
+    },
+    {
+        "id": 16,
+        "name":" G-Shock Black Dial AnalogDigital Ga-B2100-1A1Dr (G1242), Band Color-Black",
+        "price": 3599,
+        "image": "images/ghock.jpg"
+    },
+    {
+        "id": 17,
+        "name":" CASIO'S WALL-MOUNTED GOLD EDITION",
+        "price": 650,
+        "image": "images/casio.jpg"
+    },
+    {
+        "id": 18,
+        "name":" UNI-SEX FASTRACK'S ORANGE BLACK EDITION WATCH ",
+        "price": 699,
+        "image": "images/fastrack.jpg"
+    },
+    {
+        "id":19,
+        "name":" Apple iPhone 15 Pro Max (256 GB) - Black Titanium",
+        "price": 119999,
+        "image": "images/iphone.jpeg"
+    },
+    {
+        "id":20,
+        "name":"Samsung Galaxy S24 Ultra 5G AI Smartphone (Titanium Violet, 12GB, 256GB Storage)",
+        "price": 100999,
+        "image": "images/samsung2.jpeg"
+    },
+    {
+        "id": 21,
+        "name":"OnePlus 12 (Flowy Emerald, 16GB RAM, 512GB Storage)",
+        "price": 59999,
+        "image": "images/oneplus.jpeg"
+    },
+    {
+        "id": 22,
+        "name":"iQOO 12 5G (Legend, 16GB RAM, 512GB Storage) | India's 1st Snapdragon® 8 Gen 3 Mobile Platform | India's only Flagship with 50MP + 50MP + 64MP Camera",
+        "price": 44999,
+        "image": "images/iqoo.jpeg"
+    },
+    {
+        "id": 23,
+        "name":"Apple iPhone 14 (128 GB) - Starlight ,15.40 cm (6.1-inch) Super Retina XDR display ",
+        "price": 50999,
+        "image": "images/iphone2.jpeg"
+    },
+    {
+        "id":24,
+        "name":"Redmi Note 13 5G (Arctic White, 6GB RAM, 128GB Storage) | 5G Ready | 120Hz Bezel-Less AMOLED | 7.mm Slimmest Note Ever | 108MP Pro-Grade Camera",
+        "price":14999,
+        "image": "images/redmi.jpeg"
+    },
+    {
+        "id":25,
+        "name":"Samsung 108 cm (43 Inches) Crystal Vision 4K Ultra HD Smart LED TV UA43CUE70AKLXL (Titan Gray)",
+        "price": 32990,
+        "image": "images/samtv.jpeg"
+    },
+    {
+        "id":26,
+        "name":"Redmi 108 cm (43 inches) 4K Ultra HD Smart LED Fire TV L43R8-FVIN (Black)",
+        "price": 25999,
+        "image": "images/redmitv.jpeg"
+    },
+    {
+        "id":27,
+        "name":"IFB 30 L Convection Microwave Oven (30BRC2, Black, With Starter Kit), Standard",
+        "price": 14990,
+        "image": "images/coocker.jpeg"
+    },
+    {
+        "id":28,
+        "name":"Apple MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver",
+        "price": 76990,
+        "image": "images/laptopApple.jpg"
+    },
+    {
+        "id":29,
+        "name":"Apple Apple 2023 MacBook Pro (16-inch, M3 Max chip with 16‑core CPU and 40‑core GPU, 48GB Unified Memory, 1TB) - Space Blac",
+        "price": 199999,
+        "image": "images/LAPtopApple2.jpg"
+    },
+    {
+        "id":30,
+        "name":"Samsung Galaxy Book2 (NP750) Intel 12th Gen core i5 39.6cm (15.6) FHD Thin & Light Laptop (8 GB/512 GB/Windows 11/MS Office/Backlit Keyboard/Finger Print Reader/Silver/1.55Kg), NP750XED-KC1IN",
+        "price": 48480,
+        "image": "images/laptopsamsung.jpg"
+    },
+    {
+        "id":31,
+        "name":"Logitech B170 Wireless Mouse, 2.4 GHz with USB Nano Receiver, Optical Tracking, 12-Months Battery Life, Ambidextrous, PC/Mac/Laptop - Black",
+        "price":560,
+        "image": "images/logitecmouse.jpg"
+    },
+    {
+        "id":32,
+        "name":"Logitech K480 Wireless Multi-Device Keyboard For Windows, Macos, Ipados, Android Or Chrome Os, Bluetooth, Compact, Compatible With Pc, Mac, Laptop, Smartphone, Tablet - Black",
+        "price":540,
+        "image": "images/logitechkeyboard.jpg"
+    },
+    {
+        "id":33,
+        "name":"Logitech G733 Lightspeed Wireless Gaming Headset with Suspension Over Ear Headband, LIGHTSYNC RGB, Blue VO!CE mic Technology and PRO-G Audio Drivers - Black",
+        "price":9750,
+        "image": "images/logitechheadphoe.jpg"
+    }
+]

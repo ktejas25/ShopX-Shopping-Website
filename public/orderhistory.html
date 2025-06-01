@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order History - ShopX</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="orderhistory.css">
+</head>
+<body>
+
+  <section id="header" style="padding: 15px 30px; background: #0d6efd; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <a href="index.html" style="color: white; font-weight: 700; font-size: 1.3rem; text-decoration: none;">ShopX</a>
+  </section>
+
+  <div class="container">
+    <h1>Your Order History</h1>
+    <div id="orderHistoryContainer"></div>
+
+    <button id="clearHistoryBtn" class="Btn" style="background-color: #dc3545; box-shadow: 0 2px 6px rgba(220, 53, 69, 0.5);">🗑️ Clear Order History</button>
+
+    <a href="shop.html" class="Btn" style="margin-left: 10px;">🛍️ Continue Shopping</a>
+  </div>
+
+  <script>
+    const orderHistoryContainer = document.getElementById('orderHistoryContainer');
+    const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+    let orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+
+    function renderOrders() {
+      orderHistoryContainer.innerHTML = '';
+      if (orderHistory.length === 0) {
+        orderHistoryContainer.innerHTML = '<p class="no-orders">You have no past orders.</p>';
+        clearHistoryBtn.style.display = 'none';
+        return;
+      }
+
+      clearHistoryBtn.style.display = 'inline-block';
+
+      orderHistory.forEach(order => {
+        const orderCard = document.createElement('div');
+        orderCard.classList.add('order-card');
+
+        let itemsHtml = '<div class="order-items">';
+        order.items.forEach(item => {
+          const subtotal = item.price * item.quantity;
+          itemsHtml += `
+            <div class="order-item">
+              <div>${item.name} (x${item.quantity})</div>
+              <div>Rs ${item.price.toFixed(2)} × ${item.quantity} = <span>Rs ${subtotal.toFixed(2)}</span></div>
+            </div>
+          `;
+        });
+        itemsHtml += '</div>';
+
+        const statusClass = order.status.toLowerCase();
+
+        orderCard.innerHTML = `
+          <div class="order-header">
+            <div>Order #${order.orderId}</div>
+            <div><strong>Status:</strong> <span class="order-status ${statusClass}">${order.status}</span></div>
+          </div>
+          <div class="order-details"><strong>Order Date:</strong> ${order.orderDate}</div>
+          <div class="order-details"><strong>Delivery Date:</strong> ${order.deliveryDate}</div>
+          <div class="order-details"><strong>Shipping Address:</strong> ${order.address}</div>
+          <div class="order-details"><strong>Customer:</strong> ${order.customer?.fullname || 'N/A'} (${order.customer?.email || 'No email'})</div>
+          ${itemsHtml}
+          <div class="order-details" style="font-weight: 700; margin-top: 10px;">Total: Rs ${order.total.toFixed(2)}</div>
+        `;
+        orderHistoryContainer.appendChild(orderCard);
+      });
+    }
+
+    clearHistoryBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear your entire order history? This action cannot be undone.')) {
+        localStorage.removeItem('orderHistory');
+        orderHistory = [];
+        renderOrders();
+      }
+    });
+
+    renderOrders();
+
+    app.get("/orderHistory/:email", (req, res) => {
+    const userEmail = req.params.email;
+
+    connection.query(
+        "SELECT * FROM orders WHERE user_email = ? ORDER BY order_date DESC",
+        [userEmail],
+        (err, orders) => {
+            if (err) return res.status(500).json({ success: false, message: "Fetch error" });
+
+            // Now get items for each order
+            const orderIds = orders.map(o => o.id);
+            if (orderIds.length === 0) return res.json({ success: true, orders: [] });
+
+            connection.query(
+                "SELECT * FROM order_items WHERE order_id IN (?)",
+                [orderIds],
+                (err2, items) => {
+                    if (err2) return res.status(500).json({ success: false, message: "Items fetch error" });
+
+                    // Attach items to corresponding orders
+                    const grouped = {};
+                    items.forEach(item => {
+                        if (!grouped[item.order_id]) grouped[item.order_id] = [];
+                        grouped[item.order_id].push(item);
+                    });
+
+                    const final = orders.map(order => ({
+                        ...order,
+                        items: grouped[order.id] || []
+                    }));
+
+                    res.json({ success: true, orders: final });
+                }
+            );
+        }
+    );
+});
+
+fetch("/api/orders/1")  // Example user ID
+  .then(res => res.json())
+  .then(orders => displayOrders(orders));
+
+
+  </script>
+
+</body>
+</html>

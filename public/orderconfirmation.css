@@ -1,0 +1,91 @@
+/* orderconfirmation.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mainheading {
+  font-size: 32px;
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+h2, h3 {
+  color: #34495e;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#orderMeta, #customerInfo, #orderedItems {
+  background-color: #f2f4f8;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed #ccc;
+}
+
+.order-item-name {
+  font-weight: 500;
+}
+
+.order-total {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.Btn {
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 10px 10px 0 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.Btn:hover {
+  background-color: #1a252f;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .mainheading {
+    font-size: 24px;
+  }
+
+  .Btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+}

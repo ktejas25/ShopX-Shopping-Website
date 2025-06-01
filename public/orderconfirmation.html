@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Confirmation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="orderconfirmation.css" />
+  <link rel="stylesheet" href="payment.css" />
+</head>
+<body>
+
+<section id="header">
+  <a href="index.html"><img src="images/logowhite.png" class="logo" alt="Logo" /></a>
+  <div>
+    <ul id="navbar">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="shop.html">SHOP</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="login.html">LOGIN</a></li>
+      <li><a href="login.html">SIGNUP</a></li>
+    </ul>
+  </div>
+</section>
+
+<div class="container">
+  <div style="flex: 1 1 100%;">
+    <h1 class="mainheading">Thank You for Your Purchase!</h1>
+    <p id="orderMeta"></p>
+
+    <h2>Customer Information</h2>
+    <div id="customerInfo"></div>
+
+    <h2>Order Details</h2>
+    <div id="orderedItems"></div>
+
+    <div style="margin-top: 20px;">
+      <a href="shop.html" class="Btn">🛍️ Continue Shopping</a>
+    </div>
+
+    <!-- New Track Order button -->
+    <a href="shippingstatus.html" class="Btn" style="margin-top: 1rem; display: inline-block;">
+      🚚 Track Your Order
+    </a>
+
+    <h3>Need Help?</h3>
+    <p>Email: shoppingwithshopx@gmail.com | Phone: +91 9172653374</p>
+  </div>
+</div>
+
+<script>
+    const orderConfirmation = JSON.parse(localStorage.getItem('orderData'));
+    const orderMeta = document.getElementById('orderMeta');
+    const customerInfo = document.getElementById('customerInfo');
+    const orderedItems = document.getElementById('orderedItems');
+
+if (!orderConfirmation) {
+  orderMeta.innerHTML = "<p>No order data found.</p>";
+  customerInfo.innerHTML = "";
+  orderedItems.innerHTML = "";
+} else {
+  orderMeta.innerHTML = `
+    <strong>Order No:</strong> ${orderConfirmation.orderNumber}<br>
+    <strong>Date:</strong> ${orderConfirmation.orderDate}<br>
+    <strong>Estimated Delivery:</strong> ${orderConfirmation.deliveryDate}
+  `;
+
+  const c = orderConfirmation.customer;
+  customerInfo.innerHTML = `
+    <p><strong>Name:</strong> ${c.fullname}</p>
+    <p><strong>Email:</strong> ${c.email}</p>
+    <p><strong>Shipping Address:</strong> ${c.address}, ${c.city}, ${c.state} - ${c.zip}</p>
+    <p><strong>Payment Method:</strong> ${orderConfirmation.paymentMethod}</p>
+  `;
+
+  if (!orderConfirmation.items || orderConfirmation.items.length === 0) {
+    orderedItems.innerHTML = "<p>No items in order.</p>";
+  } else {
+    orderedItems.innerHTML = "<h3>Order Items:</h3>";
+    orderConfirmation.items.forEach(item => {
+      const div = document.createElement('div');
+      div.classList.add('order-item');
+      div.innerHTML = `
+        <div class="order-item-name">${item.name} (x${item.quantity})</div>
+        <div>Rs ${(item.price * item.quantity).toFixed(2)}</div>
+      `;
+      orderedItems.appendChild(div);
+    });
+
+    const totalDiv = document.createElement('div');
+    totalDiv.classList.add('order-total');
+    totalDiv.innerHTML = `Total: Rs ${orderConfirmation.total.toFixed(2)}`;
+    orderedItems.appendChild(totalDiv);
+  }
+
+  // Clear cart since order is confirmed
+  localStorage.removeItem('cart');
+}
+
+
+</script>
+</body>
+</html>
